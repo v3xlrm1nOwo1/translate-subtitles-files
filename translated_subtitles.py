@@ -81,7 +81,7 @@ def main():
     source_lang = languages[source_lang]
     destination_lang = languages[destination_lang]
     
-    file_extension = file_name[file_name.find('.')+1: ]
+    file_extension = file_extension = file_name[::-1][: file_name[::-1].find('.')][::-1]
     file_path = os.path.abspath(file_name)
     
     translation = open_translation_file(file_path=file_path, file_extension=file_extension, source_lang=source_lang, destination_lang=destination_lang)
